@@ -47,7 +47,19 @@ Given a string `testString` create a new variable called `condensedString` that 
 let testString = "  How   about      thesespaces  ?  "
 //condensedString = " How about thesespaces ? "
 ```
+```
+let testString = "  How       about      these       spaces  ?  "
+var test = testString.components(separatedBy: .whitespacesAndNewlines)
+var condensedString  = ""
 
+for i in test{
+if i == ""{
+continue //skips ""
+}
+condensedString.append(i + " ")//adds space back at where all the "" were skipped into empty string
+}
+print(condensedString)
+```
 
 ## Question 3
 
