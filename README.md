@@ -11,7 +11,13 @@ var problem = "split this string into words and print them on separate lines"
 
 // Your code
 ```
-
+```
+var problem = "split this string into words and print them on separate lines"
+var seperate = problem.components(separatedBy: (" "))
+for i in seperate{
+print(i)
+}
+```
 Example
 
 Input:
@@ -53,6 +59,14 @@ Sample Input: `"Swift is the best language"`
 
 Sample Output: `"language best the is Swift"`
 
+```
+var str = "Swift is the best language"
+var newStr = ""
+var seperate = str.components(separatedBy: (" "))
+for i in seperate.reversed(){
+print(i, terminator: " ")
+}
+```
 
 ## Question 4
 
@@ -63,6 +77,22 @@ Example:
 Sample Input: `"danaerys dad cat civic bottle"`
 
 Sample Output: `2`
+```
+var incrementForPalindrome = 0
+var str = "danaerys dad cat civic bottle mom racecar"
+var flip = (String(str.reversed()))
+var s = str.components(separatedBy: (" "))
+var f = flip.components(separatedBy: (" "))
+//print(flip)
+for i in s{
+for j in f{
+if i == j{
+incrementForPalindrome += 1
+}
+}
+}
+print(incrementForPalindrome)
+```
 
 
 ## Question 5
@@ -83,6 +113,27 @@ Sample Input: `"PPALLP"`
 
 Sample Output: `true`
 
+```
+var absent = 2
+
+var a = 0
+var late = "LLL"
+
+var attendance = "PPALLP"
+
+for i in attendance{
+if i == "A"{
+a += 1
+if absent <= a || attendance.contains(late){
+print("No Reward")
+}
+else{
+print("Good job")
+}
+}
+}
+```
+
 
 ## Question 6
 
@@ -99,3 +150,22 @@ Sample Output1: `False`
 Sample Input2: `("aa", "aab")`
 
 Sample Output2: `True`
+
+```
+var output = ""
+var tuple =
+(ransomNote:"we have your kid", magazine: "abcdefghijkl"  )
+
+for i in tuple.ransomNote{
+if tuple.magazine.contains(i){
+continue
+}
+output.append(i)
+}
+if output.count > 0{
+print("You can't make ransom note with magazine")
+}
+else{
+print("You can make ransom note with magazine")
+}
+```
